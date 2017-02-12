@@ -1,0 +1,11 @@
+<h1>User data tables</h1>
+{{ range $providerName, $provider := . }}
+    <ul>
+        <b>{{ $providerName }}</b>
+        {{ range $table := $provider.TableNames }}
+            <li>
+                <a href="/table?name={{ $table }}&provider={{ $providerName }}">{{ $table }}</a>
+            </li>
+        {{ end }}
+    </ul>
+{{ end }}

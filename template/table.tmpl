@@ -1,0 +1,25 @@
+<h1> {{ .ProviderName }} </h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Postcode</th>
+            <th>Phone</th>
+            <th>Credit limit</th>
+            <th>Birthday</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{ range $user := .Table }}
+        <tr>
+            <td> {{ $user.Name }} </td>
+            <td> {{ $user.Address }} </td>
+            <td> {{ $user.Postcode }} </td>
+            <td> {{ $user.Phone }} </td>
+            <td align="right"> {{ $user.CreditLimit }} </td>
+            <td> {{ $user.Birthday }} </td>
+        </tr>
+    {{ end }}
+    </tbody>
+</table>
